@@ -23,6 +23,7 @@ body {
     color: #818181;
     display: block;
     transition: 0.3s;
+    font-family: 'Roboto', sans-serif;
   }
   
   .sidebar a:hover {
@@ -38,12 +39,14 @@ body {
   }
   
   .openbtn {
+    font-family: 'Roboto', sans-serif;
     font-size: 20px;
     cursor: pointer;
     background-color: #111;
     color: white;
     padding: 10px 15px;
     border: none;
+    border-radius: 15px;
   }
   
   .openbtn:hover {
@@ -78,5 +81,5 @@ body {
   }
   
   .subtitle{
-    font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
   }
