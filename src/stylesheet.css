@@ -1,6 +1,11 @@
 body {
     font-family: "Lato", sans-serif;
     margin: 0px;
+    height:100%;
+  }
+
+  p{
+    margin:0;
   }
 
   .sidebar {
@@ -16,7 +21,7 @@ body {
     padding-top: 60px;
   }
   
-  .sidebar a {
+  .sidebar #links {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -26,7 +31,9 @@ body {
     font-family: 'Roboto', sans-serif;
   }
   
-  .sidebar a:hover {
+ 
+
+  .sidebar #links:hover {
     color: #f1f1f1;
   }
   
@@ -54,10 +61,8 @@ body {
   }
   
   #main {
-    transition: margin-left .5s;
-    padding: 16px;
-    margin: 5px;
-    display: inline-flexbox;
+    transition: margin-left .2s;
+    border: 1px solid black;
   }
   
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -67,20 +72,106 @@ body {
   }
 
 #title{
-  display: inline-flexbox;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  text-align: center;
-  
+  margin: auto;
+  height: 100%;
+  display: block;
+
+  overflow: auto;
+  transition: margin-left .5s;
 }
-  h1{
+  #one{
   margin: 0;
   font-family: 'Yeseva One', cursive;
   font-size: 10vh;
-  color:#b7410e;
+  color: #BB4430;
+  float:left;
+  text-align: center;
+  padding-left: 30%;
   }
   
+  #two{
+    margin: 0;
+    text-align: center;
+    padding-left: 5px;
+    float:left;
+    font-family: 'Yeseva One', cursive;
+    font-size: 10vh;
+    color: #7EBDC2;
+    }
+
+    .eventCards{
+      border: 1px solid black;
+      display: grid;
+      margin: 50px;
+      grid-gap: 0px;
+      grid-template-columns: auto auto auto;
+     
+    }
+
+
   .subtitle{
+
+  text-align: center;
   font-family: 'Roboto', sans-serif;
+
   }
+/* 
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  } */
+  
+  div {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .container {
+    margin: 10px;
+    width: 250px;
+    height: 300px;
+    perspective: 1000px;
+  }
+  
+  .card {
+ 
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+  
+  .front, .back {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+  }
+  
+  .front {
+    border: 2px solid black;
+  }
+  
+  /* .front:hover {
+    bottom: 2px;
+    left: 2px;
+    box-shadow: 0px 0px 20px 1px #000;
+  }
+   */
+  .back {
+    border: 2px solid black;
+    transform: rotateY(180deg);
+  }
+/*   
+  .back:hover {
+    bottom: 2px;
+    right: 2px;
+    box-shadow: 0px 0px 20px 1px #000;
+  } */
+  
