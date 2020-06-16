@@ -19,7 +19,7 @@
 
 
 
-#### **Addiotonal Information:**
+#### **Additional Information:**
 
 
 
