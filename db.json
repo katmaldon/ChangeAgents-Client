@@ -1,0 +1,106 @@
+{
+    "events": [
+      {
+        "id": 1,
+        "title": "BLM Protest GAP",
+        "location": "Grand Army Plaza",
+        "image": "some image url",
+        "zip": "11215",
+        "date": "06/17/2020",
+        "time": "3pm",
+        "url": "blacklivesmatter.com",
+        "info": "Protest organized by BLM"
+      },
+      {
+        "id": 2,
+        "title": "George Floyd Protest CH",
+        "location": "Nostrand/Fulton",
+        "image": "some image url",
+        "zip": "11216",
+        "date": "06/20/2020",
+        "time": "5pm",
+        "url": "blacklivesmatter.com",
+        "info": "Speeches and information around BLM activism"
+      },
+      {
+        "id": 3,
+        "title": "Protest Barclay, Juneteenth Celebration",
+        "location": "Barclays Center",
+        "image": "some image url",
+        "zip": "11217",
+        "date": "06/19/2020",
+        "time": "4pm",
+        "url": "juneteenth.com",
+        "info": "Protest and celebration"
+      }
+    ],
+
+    "resources": [
+      {
+        "id": 1,
+        "title": "Open Your Lobby",
+        "location": "Various locations Brooklyn",
+        "image": "some image url",
+        "zip": "all",
+        "url": "https://www.6sqft.com/here-are-the-nyc-museums-and-theaters-opening-their-lobbies-to-help-protestors/",
+        "info": "Businesses and institutions all over NYC offer comfort stations,drinks, snacks, and phone charging to protesters"
+      },
+
+      {
+        "id": 2,
+        "title": "Know your rights",
+        "location": "USA",
+        "image": "some image url",
+        "zip": "all",
+        "url": "https://www.aclu.org/know-your-rights/protesters-rights/",
+        "info": "The First Amendment protects your right to assemble and express your views through protest. However, police and other government officials are allowed to place certain narrow restrictions on the exercise of speech rights."
+      },
+
+      {
+        "id": 3,
+        "title": "What to bring to a protest",
+        "location": "USA",
+        "image": "some image url",
+        "zip": "all",
+        "url": "https://www.amnestyusa.org/pdfs/SafeyDuringProtest_F.pdf",
+        "info": "Practical tips for which equipment to bring, which items to avoid, and how to stay safe at protests"
+      }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name": "Allison Smith",
+            "location": "Brooklyn",
+            "zip": 11216,
+            "bio": "Here to make a difference."
+        },
+        {
+            "id": 2,
+            "name": "Janay Tanner",
+            "location": "Brooklyn",
+            "zip": 11211,
+            "bio": "Student. Activist. Programmer."
+        },
+        {
+            "id": 3,
+            "name": "Cory Miller",
+            "location": "Brooklyn",
+            "zip": 11217,
+            "bio": "Father and law professor, CUNY. NY Strong."
+        },
+        {
+            "id": 4,
+            "name": "Tara Peterson",
+            "location": "Brooklyn",
+            "zip": 11215,
+            "bio": "Brooklyn born and raised."
+        },
+        {
+            "id": 5,
+            "name": "Mehdi Mansouri",
+            "location": "Brooklyn",
+            "zip": 11218,
+            "bio": "United we stand, divided we fall."
+        }
+    ]
+}

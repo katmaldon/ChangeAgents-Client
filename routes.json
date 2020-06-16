@@ -1,0 +1,18 @@
+
+   {
+
+    "/users": "/users",
+
+    "/events": "/events",
+
+    "/resources": "/resources",
+
+    "/users/:id": "/users/:id",
+
+    "/resources/:id": "/resources/:id",
+
+    "/events/:id": "/events/:id"
+
+  }
+
+
