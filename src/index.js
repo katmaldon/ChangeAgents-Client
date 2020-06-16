@@ -40,86 +40,40 @@ function titleColor(){
 
   const events = document.querySelector('.events');
   const div = document.querySelector('.eventCards');
+
+  function renderEvents(json){
+    json.forEach( e => {
+    let eventDiv = document.createElement('div');
+    eventDiv.innerHTML = `
+    <div class="container">
+    <div class="card" onclick="flip(event)">
+      <div class="front">
+        <h1 class="cardTitle">${e.title}</h1>
+        <p> ${e.location}</p>
+        <p>${e.date}</p>
+        <p>${e.time}</p>
+
+      </div>
+      <div class="back">
+        <h3>${e.info}</h3>
+        <a href="${e.url}">${e.url}</a>
+
+      </div>
+    </div>
+  </div>`;
+  div.append(eventDiv);
   
+    });
+  }
+  
+
   events.addEventListener('click', () =>{
-   div.innerHTML = `
-   <div class="container">
-   <div class="card" onclick="flip(event)">
-     <div class="front">
-       <h1>This is the front</h1>
-       <p> Here is some additional text</p>
-     </div>
-     <div class="back">
-       <h1>This is the back</h1>
-     </div>
-   </div>
- </div>
-
- <div class="container">
- <div class="card" onclick="flip(event)">
-   <div class="front">
-     <h1>This is the front</h1>
-     <p> Here is some additional text</p>
-   </div>
-   <div class="back">
-     <h1>This is the back</h1>
-   </div>
- </div>
-</div>
-
-<div class="container">
-<div class="card" onclick="flip(event)">
-  <div class="front">
-    <h1>This is the front</h1>
-    <p> Here is some additional text</p>
-  </div>
-  <div class="back">
-    <h1>This is the back</h1>
-  </div>
-</div>
-</div>
-
-<div class="container">
-<div class="card" onclick="flip(event)">
-  <div class="front">
-    <h1>This is the front</h1>
-    <p> Here is some additional text</p>
-  </div>
-  <div class="back">
-    <h1>This is the back</h1>
-  </div>
-</div>
-</div>
-
-
-<div class="container">
-<div class="card" onclick="flip(event)">
-  <div class="front">
-    <h1>This is the front</h1>
-    <p> Here is some additional text</p>
-  </div>
-  <div class="back">
-    <h1>This is the back</h1>
-  </div>
-</div>
-</div>
-
-
-<div class="container">
-<div class="card" onclick="flip(event)">
-  <div class="front">
-    <h1>This is the front</h1>
-    <p> Here is some additional text</p>
-  </div>
-  <div class="back">
-    <h1>This is the back</h1>
-  </div>
-</div>
-</div>
- `
-});
-
-
+    div.innerHTML = ""
+   fetch('http://localhost:3000/events')
+    .then(resp => resp.json())
+    .then(json => renderEvents(json))
+}
+);
 }
 
 
@@ -136,12 +90,46 @@ function flip(event){
 };
 eventsClick();
 
+// VOLUNTEER LOGIC ***********************
 
+ function volunteerClick(){
 
+  const volunteer = document.querySelector('.volunteer');
+  const div = document.querySelector('.eventCards');
 
-$('.flip').click(function(){
-  $(this).find('.card').addClass('flipped').mouseleave(function(){
-      $(this).removeClass('flipped');
-  });
-  return true;
-});
+  function renderEvents(json){
+    json.forEach( e => {
+    let volunteerDiv = document.createElement('div');
+    volunteerDiv.innerHTML = `
+    <div class="container">
+    <div class="card" onclick="flip(event)">
+      <div class="front">
+        <h1 class="cardTitle">${e.title}</h1>
+        <p> ${e.location}</p>
+        <p>${e.date}</p>
+        <p>${e.time}</p>
+
+      </div>
+      <div class="back">
+        <h4>${e.info}</h4>
+        <a href="${e.url}">${e.url}</a>
+
+      </div>
+    </div>
+  </div>`;
+  div.append(volunteerDiv);
+  
+    });
+  }
+  
+
+  volunteer.addEventListener('click', () =>{
+    div.innerHTML = ""
+   fetch('http://localhost:3000/resources')
+    .then(resp => resp.json())
+    .then(json => renderEvents(json));
+}
+);
+}
+volunteerClick()
+
