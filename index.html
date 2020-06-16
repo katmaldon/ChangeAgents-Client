@@ -1,30 +1,44 @@
 <!DOCTYPE html>
 <html>
+  
+ 
 <head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="./src/stylesheet.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Yeseva+One&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
+  
     <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="#">My Profile</a>
-        <a href="#">Events</a>
-        <a href="#">Volunteer/Organize</a>
-        <a href="#">Use Your Voice</a>
-        <a href="#">About</a>
+        <a href="javascript:void(0)" id="links" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" id="links" class="profile">My Profile</a>
+        <p id="links" class="events">Events</p>
+        <a id="links" href="#">Volunteer/Organize</a>
+        <a  id="links" href="#">Use Your Voice</a>
+        <a id="links" href="#">About</a>
       </div>
       
       <div id="main">
         <button class="openbtn" onclick="openNav()">☰ Menu</button> 
-        <div id="title"> 
-        <h1>Change Agents.</h1>
-        <p class="subtitle">stay engaged. get active. make a difference.</p>
-    </div>
       </div>
-
+      <div id="title"> 
+        <h1 id="one">Change</h1> <h1 id="two">Agents.</h1>
+        <br>
+    
+        </div>
+        <p class="subtitle">stay engaged. get active. make a difference.</p>
+        <div class = "eventCards">
       
+        </div>
 
-<script src="./src/index.js"></script>
+
+        <script src="./src/index.js"></script>
+        
+
 </body>
+
 </html>
