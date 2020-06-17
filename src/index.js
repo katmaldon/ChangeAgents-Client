@@ -2,7 +2,7 @@
 
 function openNav() {
   document.getElementById("mySidebar").style.width = "300px";
-  document.getElementById("main").style.marginLeft = "300px";
+  document.getElementById("main").style.marginLeft = "10px";
   document.querySelector("body").style.marginLeft = "300px";
 }
 
@@ -37,7 +37,7 @@ function titleColor(){
   titleColor();
 
   function eventsClick(){
-
+  const profileCards = document.querySelector('.profileCards')
   const events = document.querySelector('.events');
   const div = document.querySelector('.eventCards');
 
@@ -46,7 +46,7 @@ function titleColor(){
     let eventDiv = document.createElement('div');
     eventDiv.innerHTML = `
     <div class="container">
-    <div class="card" onclick="flip(event)">
+    <div class="card" id=${e.id} onclick="flip(event)">
       <div class="front">
         <h1 class="cardTitle">${e.title}</h1>
         <p> ${e.location}</p>
@@ -68,6 +68,8 @@ function titleColor(){
   
 
   events.addEventListener('click', () =>{
+    document.body.setAttribute('class', 'inner');
+    profileCards.innerHTML =""
     div.innerHTML = ""
    fetch('http://localhost:3000/events')
     .then(resp => resp.json())
@@ -96,13 +98,16 @@ eventsClick();
 
   const volunteer = document.querySelector('.volunteer');
   const div = document.querySelector('.eventCards');
-
+  const profileCards = document.querySelector('.profileCards')
+  
   function renderEvents(json){
+    // let eventTitle = document.createElement('h1');
+    
     json.forEach( e => {
-    let volunteerDiv = document.createElement('div');
+    let volunteerDiv = document.createElement('div')
     volunteerDiv.innerHTML = `
     <div class="container">
-    <div class="card" onclick="flip(event)">
+    <div class="card" id=${e.id} onclick="flip(event)">
       <div class="front">
         <h1 class="cardTitle">${e.title}</h1>
         <p> ${e.location}</p>
@@ -117,6 +122,8 @@ eventsClick();
       </div>
     </div>
   </div>`;
+  // eventTitle.textContent = "Resources"
+  // div.append(eventTitle)
   div.append(volunteerDiv);
   
     });
@@ -124,12 +131,50 @@ eventsClick();
   
 
   volunteer.addEventListener('click', () =>{
+    profileCards.innerHTML =""
+    document.body.setAttribute('class', 'inner');
     div.innerHTML = ""
+    profileCards.innerHTML = ""
    fetch('http://localhost:3000/resources')
     .then(resp => resp.json())
     .then(json => renderEvents(json));
 }
 );
 }
-volunteerClick()
+volunteerClick();
 
+
+//PROFILE LOGIC *********************
+function renderProfile(json){
+  let greeting = ["Making a difference from ","Taking a stand in ", "Doing your part in ", "Changing the world from ", "Using your voice from "];
+  const eventCards = document.querySelector('.eventCards');
+  const profileCards = document.querySelector('.profileCards');
+  const donationDiv = document.createElement('div');
+  const myEvents = document.createElement('div');
+  donationDiv.className = "donation";
+  myEvents.className = "my-events";
+  eventCards.innerHTML = ""
+  //figure out how to style the event card div w a 0 height for other pages,
+  // or remove without issues.
+  profileCards.innerHTML = `
+  <h1>Hey, ${json.name}!</h1>
+  <p>${greeting[Math.round(Math.random() * 3)]} ${json.location}, New York</p>
+  
+ `
+profileCards.append(donationDiv);
+profileCards.append(myEvents);
+}
+
+function profileClick(){
+const profile = document.querySelector('.profile');
+
+profile.addEventListener('click', () => { 
+  document.body.setAttribute('class', 'inner');
+    fetch('http://localhost:3000/users/1')
+    .then(resp => resp.json())
+    .then(json => renderProfile(json));
+});
+
+}
+
+profileClick();
