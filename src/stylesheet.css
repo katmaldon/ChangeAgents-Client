@@ -2,16 +2,33 @@ body {
     font-family: "Lato", sans-serif;
     margin: 0px;
     height:100%;
-    background-image: url("https://assets.tvo.org/prod/s3fs-public/styles/full_width_1280/public/article-thumbnails/Black-Lives-Matter.jpg?EnUPuFwVloAYHIB.QK3q50EdkrQ9ovFU");
+    background-image: url("http://southboundproject.org/wp-content/uploads/sites/2/nggallery/sheila-pree-bright/1-Exhibition_ReclaimMLKDay-Black-Lives-Matter-Disrupts-M.L.K.-Jr.-Day-Parades-Across-the-Country.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center top;
+    transition: all 0.9s ease;
+    
+   
   }
 
-  body.inner{
+
+ .bg2{
+  z-index: -10;
+  position: absolute;
+  width: 100%;
+ }
+
+ /* .bg3{
+  z-index: -30;
+ 
+
+} */
+  /* body.inner{
     font-family: "Lato", sans-serif;
     margin: 0px;
     height:100%;
-    background-image: none;
-    background-color: white;
-  }
+    
+  } */
 
   p{
     margin:0;
@@ -126,7 +143,9 @@ body {
   .subtitle{
   text-align: center;
   font-family: 'Roboto', sans-serif;
-  text-shadow: 2px 1px white;
+  color: #cfcabc;
+  text-shadow: 1px 1px black;
+  font-size: 3vh;
   }
 /* 
   body {
@@ -197,3 +216,43 @@ body {
     background-repeat: no-repeat;
     background-position: center;
   }
+
+
+  /* TEST BELOW */
+  #div_img {
+    width:  200px;
+    height: 100px;
+  }
+  
+  #div_img img {
+    position: absolute;
+  }
+  
+   #img_default {
+     transition: all 0.9s ease ;
+   }
+
+   #clicker{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: none;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+   }
+
+ .donation{
+    border: 1px solid black;
+    width: 50;
+ 
+   }
+
+   button{
+     size: 2vh;
+   }
+
+   .profileCards{
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+   }
