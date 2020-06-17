@@ -33,7 +33,7 @@ function titleColor(){
  });
 }
 
-  
+
   titleColor();
 
   function eventsClick(){
@@ -62,10 +62,10 @@ function titleColor(){
     </div>
   </div>`;
   div.append(eventDiv);
-  
+
     });
   }
-  
+
 
   events.addEventListener('click', () =>{
     div.innerHTML = ""
@@ -113,15 +113,17 @@ eventsClick();
       <div class="back">
         <h4>${e.info}</h4>
         <a href="${e.url}">${e.url}</a>
+        <br></br>
+        <button class="favorite">Save to profile</button>`
 
       </div>
     </div>
   </div>`;
   div.append(volunteerDiv);
-  
+
     });
   }
-  
+
 
   volunteer.addEventListener('click', () =>{
     div.innerHTML = ""
