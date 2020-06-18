@@ -69,8 +69,9 @@ function titleColor(){
   }
 
   events.addEventListener('click', () => {
-    session_user_id = id //pull session id from card  ?
+    session_user_id = 1
     fav_event_id = event.target.parentNode.id
+
     console.log(event.target.parentNode.id)
     if(event.target.className === "eventsBtn") {
 
@@ -81,7 +82,7 @@ function titleColor(){
                 "accept": "application/json"
             },
             body: JSON.stringify({
-                user_id: session_user_id
+                user_id: session_user_id,
                 event_id: fav_event_id
             })
         }
