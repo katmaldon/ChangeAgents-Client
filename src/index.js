@@ -178,17 +178,21 @@ profileCards.append(donationDiv);
 profileCards.append(myEvents);
 }
 
+
+
 function renderEvents(json){
 
 return `
 <button>−</button>
 <p>Event1</p>
 <p>Event2</p>
-<button type="button">Add Event</button>
+<button type="button" class="event-btn">Add Event</button>
 `
+
 }
 
 function renderDonations(){
+
   return `
   <button>−</button>
   <h1>Your Donations</h1>
@@ -254,9 +258,29 @@ function transition(){
 transition()
 
 
-// function cardImg(){
-// let cardArr = ["./images/card1.jpg", "./images/card2.jpg", "./images/card3.jpg"]
-// const card = document.querySelector('.front')
-// card.style.cssText = `background-image: url('./images/card3.jpg')`
-// }
-
+document.addEventListener('click', (e) =>{
+  let btn = document.querySelector('.event-btn')
+  let event = document.querySelector('.my-events')
+  if (e.target.className === "event-btn"){
+    let newDiv = document.createElement('div')
+    let formDiv = document.createElement('div')
+    formDiv.innerHTML = `
+    <form> 
+      <label>Title</label><br>
+      <input type="text" id="#" name="#"><br>
+      <label>Location</label><br>
+      <input type="text" id="#" name="#">
+      <label>Zip</label><br>
+      <input type="number" id="#" name="#">
+      <label>Info</label><br>
+      <input type="text" id="#" name="#">
+      <input type="submit">
+  </form>     
+    `
+    event.innerHTML = ""
+    
+    newDiv.append(formDiv)
+    event.append(newDiv)
+  
+  }
+})
