@@ -69,32 +69,6 @@ function titleColor(){
     });
   }
 
-  events.addEventListener('click', () => {
-    session_user_id = 1
-    fav_event_id = event.target.parentNode.id
-
-    console.log(event.target.parentNode.id)
-    if(event.target.className === "eventsBtn") {
-
-        const options = {
-            method: "POST",
-            headers: {
-                "content-type": "application/json",
-                "accept": "application/json"
-            },
-            body: JSON.stringify({
-                user_id: session_user_id,
-                event_id: fav_event_id
-            })
-        }
-
-        fetch("http://localhost:3000/user_events", options)
-        .then(response => response.json())
-        .then(renderEvents(json))
-    }
-
-  })
-
 
   events.addEventListener('click', () =>{
     profileCards.innerHTML =""
@@ -328,3 +302,31 @@ document.addEventListener('click', (e) =>{
 
   }
 })
+
+// const eventBtn = document.getElementsByClassName("eventsBtn")
+
+document.addEventListener('click', () => {
+    session_user_id = 1
+    fav_event_id = event.target.parentNode.id
+
+    console.log(event.target.parentNode.id)
+    if(event.target.className === "eventsBtn") {
+
+        const options = {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                "accept": "application/json"
+            },
+            body: JSON.stringify({
+                user_id: session_user_id,
+                event_id: fav_event_id
+            })
+        }
+
+        fetch("http://localhost:3000/user_events", options)
+        .then(response => response.json())
+        .then(renderEvents(json))
+    }
+
+  })
