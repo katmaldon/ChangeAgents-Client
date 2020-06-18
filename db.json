@@ -66,6 +66,7 @@
         "info": "Practical tips for which equipment to bring, which items to avoid, and how to stay safe at protests"
       }
     ],
+
     "users": [
         {
             "id": 1,
@@ -101,6 +102,13 @@
             "location": "Brooklyn",
             "zip": 11218,
             "bio": "United we stand, divided we fall."
+        }
+    ],
+
+    "user_events": [
+        {
+        "user_id": 3,
+        "event_id": 1
         }
     ]
 }

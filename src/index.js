@@ -89,7 +89,7 @@ function titleColor(){
 
         fetch("http://localhost:3000/user_events", options)
         .then(response => response.json())
-        .then(pic => renderPic(pic))
+        .then(renderEvents(json))
     }
 
   })
