@@ -7,7 +7,7 @@ body {
     background-size: 100%;
     background-position: center top;
     transition: all 0.9s ease-out 0.2s;
- 
+
   }
 
 
@@ -19,14 +19,14 @@ body {
 
  /* .bg3{
   z-index: -30;
- 
+
 
 } */
   /* body.inner{
     font-family: "Lato", sans-serif;
     margin: 0px;
     height:100%;
-    
+
   } */
 
   p{
@@ -45,7 +45,7 @@ body {
     transition: 0.2s;
     padding-top: 60px;
   }
-  
+
   .sidebar #links {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -55,13 +55,13 @@ body {
     transition: 0.3s;
     font-family: 'Roboto', sans-serif;
   }
-  
- 
+
+
 
   .sidebar #links:hover {
     color: #7EBDC2;
   }
-  
+
   .sidebar .closebtn {
     position: absolute;
     top: 0;
@@ -69,7 +69,7 @@ body {
     font-size: 36px;
     margin-left: 50px;
   }
-  
+
   .openbtn {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
@@ -81,18 +81,18 @@ body {
     border-radius: 15px;
     text-decoration: none;
   }
-  
+
   .openbtn:hover {
     background-color: #d67665;
     text-decoration: none;
   }
-  
+
   #main {
-    
+
     transition: margin-left .2s;
 
   }
-  
+
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
   @media screen and (max-height: 450px) {
     .sidebar {padding-top: 15px;}
@@ -117,9 +117,9 @@ body {
   padding-left: 30%;
   text-shadow: 1px 2px white;
 
- 
+
   }
-  
+
   #two{
     margin: 0;
     text-align: center;
@@ -132,12 +132,12 @@ body {
     }
 
     .eventCards{
-  
+
       display: grid;
       margin: 50px;
       grid-gap: 0px;
       grid-template-columns: auto auto auto;
-     
+
     }
 
 
@@ -148,7 +148,7 @@ body {
   text-shadow: 1px 1px black;
   font-size: 3vh;
   }
-/* 
+/*
   body {
     margin: 0;
     width: 100%;
@@ -158,26 +158,26 @@ body {
     align-items: center;
     flex-wrap: wrap;
   } */
-  
+
   div {
     width: 100%;
     height: 100%;
   }
-  
+
   .container {
     margin: 10px;
     width: 250px;
     height: 300px;
     perspective: 1000px;
   }
-  
+
   .card {
- 
+
     transition: transform 0.8s;
     transform-style: preserve-3d;
     cursor: pointer;
   }
-  
+
   .front, .back {
     position: absolute;
     display: flex;
@@ -187,32 +187,32 @@ body {
     backface-visibility: hidden;
     border-radius: 15px ;
   }
-  
+
   .front {
     border: 2px solid black;
   }
-  
-  
+
+
   .back {
     border: 2px solid black;
     transform: rotateY(180deg);
     background-color: white;
   }
 
-  
+
   h1.cardTitle{
     text-align: center;
     color: white;
     text-shadow: 1px 2px #7EBDC2;
-  
-    
+
+
 
   }
 
   h3{
     color: black;
   }
-  
+
   .front{
     background-image: url('./images/card1.jpg');
     background-size: 250%;
@@ -226,11 +226,11 @@ body {
     width:  200px;
     height: 100px;
   }
-  
+
   #div_img img {
     position: absolute;
   }
-  
+
    #img_default {
      transition: all 0.9s ease ;
    }
