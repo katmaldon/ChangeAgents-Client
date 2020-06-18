@@ -174,22 +174,22 @@ volunteerClick();
 
 
 //PROFILE LOGIC *********************
-function renderProfile(json) {
+function renderProfile(json){
 
-    let greeting = ["Making a difference from ", "Taking a stand in ", "Doing your part in ", "Changing the world from ", "Using your voice from "];
-    const eventCards = document.querySelector('.eventCards');
-    const profileCards = document.querySelector('.profileCards');
-    const donationDiv = document.createElement('div');
-    const myEvents = document.createElement('div');
-    donationDiv.className = "donation";
+  let greeting = ["Making a difference from ","Taking a stand in ", "Doing your part in ", "Changing the world from ", "Using your voice from "];
+  const eventCards = document.querySelector('.eventCards');
+  const profileCards = document.querySelector('.profileCards');
+  const donationDiv = document.createElement('div');
+  const myEvents = document.createElement('div');
+  donationDiv.className = "donation";
 
-    myEvents.className = "my-events";
-    eventCards.innerHTML = ""
-    //figure out how to style the event card div w a 0 height for other pages,
-    // or remove without issues.
-    profileCards.innerHTML = `
-  <h1>Hey, ${json.name}!</h1>
-  <h3>${greeting[Math.round(Math.random() * 3)]} ${json.location}, New York</h3>
+  myEvents.className = "my-events";
+  eventCards.innerHTML = ""
+  //figure out how to style the event card div w a 0 height for other pages,
+  // or remove without issues.
+  profileCards.innerHTML = `
+  <h1 class="name-greet">Hey, ${json.name}!</h1>
+  <h3 class="rand-greet">${greeting[Math.round(Math.random() * 3)]} ${json.location}, New York</h3>
  `
     //renderEventsDiv
     //renderDonationDiv
@@ -239,11 +239,11 @@ function renderDonations() {
     return `
   <button>−</button>
   <h1>Your Donations</h1>
-  <a href="https://www.gofundme.com/f/georgefloyd">George Floyd Memorial Fund</a> <span>$</span>
+  <a class="dnte" href="https://www.gofundme.com/f/georgefloyd">George Floyd Memorial Fund</a> <span>$</span>
   <br>
-  <a href="https://www.artsbusinesscollaborative.org/asp-products/the-okra-project-sponsored-project/">The Okra Project</a> <span>$</span>
+  <a class="dnte" href="https://www.artsbusinesscollaborative.org/asp-products/the-okra-project-sponsored-project/">The Okra Project</a> <span>$</span>
   <br>
-  <a href="https://www.classy.org/give/77372/#!/donation/checkout">Girls Who Code</a> <span>$</span>
+  <a class="dnte" href="https://www.classy.org/give/77372/#!/donation/checkout">Girls Who Code</a> <span>$</span>
 
   `
 
@@ -343,6 +343,7 @@ function voiceClick() {
 
 
 }
+// const eventBtn = document.getElementsByClassName("eventsBtn")
 
 document.addEventListener('click', () => {
     session_user_id = 1
@@ -367,5 +368,74 @@ document.addEventListener('click', () => {
             .then(response => response.json())
             .then(renderEvents(json))
     }
+    if (event.target.className === "choice"){
+   console.log('clicked')
+      let email = document.querySelector('.email-div')
+        email.innerHTML = renderForm()
+    }
 
+  })
+
+
+  function voiceClick(){
+    let voice = document.querySelector(".voice")
+    let div = document.querySelector(".eventCards")
+    let body = document.querySelector('body')
+    const profileCards = document.querySelector('.profileCards')
+    voice.addEventListener("click", () =>{
+      profileCards.innerHTML = ""
+      div.style.cssText = `display:flex;`
+      div.innerHTML = ""
+      body.style.cssText = `background-image: none;`
+      let emailDiv = document.createElement('div')
+      emailDiv.className = "email-div"
+
+      emailDiv.innerHTML = `
+      <h1 class="template">Choose Template to Send</h1>
+      <a class="choice" href="#">Justice for Breonna Taylor</a>
+      <br>
+      <a class="choice" href="#">Justice for George Floyd</a>
+      <br>
+      <a class="choice" href="#">Humanitarian Aid for Yemen</a>
+      <br>
+      <a class="choice" href="#">Support for Immigrants - Abolish ICE</a>
+      <br>
+`
+
+      div.append(emailDiv)
 })
+}
+
+
+    voiceClick()
+
+
+    function renderForm(){
+
+      return `<form action="mailto:someone@example.com" method="post" enctype="text/plain">
+      Name:<br>
+      <input type="text" name="name" placeholder="youremail@example.com"><br>
+      E-mail:<br>
+      <input type="text" name="mail" value="senator@email.com; governor@email.com; justice@email.com"><br>
+      Comment:<br>
+    <textarea name="comment" rows="25" cols="50" >
+      Hello,
+     My name is [YOUR NAME]. I am a resident of [CITY] and I am emailing today to demand accountability for the racist murder of George Floyd.
+     [PLEASE ADD YOUR PERSONAL STATEMENT HERE, TO AVOID AUTOMATIC FILTERING! SPEAK FROM THE HEART :) ]
+
+      I demand that charges be pressed against all officers involved in this heinous racist murder, including specifically Derek Chauvin and Tou Thao. They should not be allowed to keep their jobs and should be charged and prosecuted to the fullest extent of the law for manslaughter.
+
+      George Floyd should be alive today if it was not for the gross abuse of power and white supremacy exhibited by the Minneapolis Police Department, all officers involved must face consequences for this murder in order to provide his family with justice and prevent further cops from committing brutal acts of violence against our communities.
+
+      In addition, I demand that we start providing more support towards community efforts and organizations outside of the police forces in order to prevent police brutality and violence in the future.
+
+      Sincerely,
+      [YOUR NAME]
+
+
+
+      </textarea><br><br>
+      <input type="submit" value="Send">
+      <input type="reset" value="Reset">
+      </form>`
+    }
