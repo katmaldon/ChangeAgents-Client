@@ -1,5 +1,4 @@
 
-
 function openNav() {
   document.getElementById("mySidebar").style.width = "300px";
   document.getElementById("main").style.marginLeft = "10px";
@@ -42,6 +41,7 @@ function titleColor(){
   const div = document.querySelector('.eventCards');
 
   function renderEvents(json){
+
     json.forEach( e => {
     let eventDiv = document.createElement('div');
     eventDiv.innerHTML = `
@@ -49,9 +49,9 @@ function titleColor(){
     <div class="card" id=${e.id} onclick="flip(event)">
       <div class="front">
         <h1 class="cardTitle">${e.title}</h1>
-        <p> ${e.location}</p>
-        <p>${e.date}</p>
-        <p>${e.time}</p>
+        <p class="cardText"> ${e.location}</p>
+        <p class="cardText">${e.date}</p>
+        <p class="cardText">${e.time}</p>
 
       </div>
       <div class="back">
@@ -63,6 +63,7 @@ function titleColor(){
       </div>
     </div>
   </div>`;
+
   div.append(eventDiv);
 
     });
@@ -96,17 +97,12 @@ function titleColor(){
 
 
   events.addEventListener('click', () =>{
-    let bg1 = document.querySelector('.bg1')
-    let bg2 = document.querySelector('.bg2')
-    let bg3 = document.querySelector('.bg3')
-    //   bg1.src = ""
-    //   bg2.src = ""
-    //   bg3.src = ""
     profileCards.innerHTML =""
     div.innerHTML = ""
    fetch('http://localhost:3000/events')
     .then(resp => resp.json())
     .then(json => renderEvents(json));
+
 }
 );
 }
@@ -131,10 +127,9 @@ eventsClick();
 
   const volunteer = document.querySelector('.volunteer');
   const div = document.querySelector('.eventCards');
-  const profileCards = document.querySelector('.profileCards')
+  const profileCards = document.querySelector('.profileCards');
 
   function renderEvents(json){
-    // let eventTitle = document.createElement('h1');
 
     json.forEach( e => {
     let volunteerDiv = document.createElement('div')
@@ -142,10 +137,10 @@ eventsClick();
     <div class="container">
     <div class="card" id=${e.id} onclick="flip(event)">
       <div class="front">
+
         <h1 class="cardTitle">${e.title}</h1>
-        <p> ${e.location}</p>
-        <p>${e.date}</p>
-        <p>${e.time}</p>
+        <p class="cardText"> ${e.location}</p>
+
 
       </div>
       <div class="back">
@@ -164,13 +159,10 @@ eventsClick();
 
 
   volunteer.addEventListener('click', () =>{
+  let body = document.querySelector('body')
+  body.style.cssText = `
+  background-image: none;`
     profileCards.innerHTML =""
-    let bg1 = document.querySelector('.bg1')
-    let bg2 = document.querySelector('.bg2')
-    let bg3 = document.querySelector('.bg3')
-      bg1.src = ""
-      bg2.src = ""
-      bg3.src = ""
     div.innerHTML = ""
     profileCards.innerHTML = ""
    fetch('http://localhost:3000/resources')
@@ -214,25 +206,45 @@ profileCards.append(donationDiv);
 profileCards.append(myEvents);
 }
 
+
+
 function renderEvents(json){
 
 return `
 <button>−</button>
-<p>Event1</p>
-<p>Event2</p>
-<button type="button">Add Event</button>
+<div class="container">
+    <div class="card" id=# onclick="flip(event)">
+      <div class="front">
+
+        <h1 class="cardTitle">Justice For Breonna Taylor</h1>
+        <p class="cardText">Maria Hernandez Park</p>
+        <p class="cardText" >6pm</p>
+        <p class="cardText" >11237</p>
+
+      </div>
+      <div class="back">
+        <h4>A gathering to demand justice for Breonna. Rain or shine.</h4>
+        <p class="sub">Meeting at Maria Hernandez and marching to Bed Stuy Precinct.</p>
+        <a href="https://www.buzzfeednews.com/article/emaoconnor/breonna-taylor-protest-brooklyn-police-brutality">More Info</a>
+
+      </div>
+    </div>
+  </div>
+<button type="button" class="event-btn">Add Event</button>
 `
+
 }
 
 function renderDonations(){
+
   return `
   <button>−</button>
   <h1>Your Donations</h1>
-  <a href="https://www.gofundme.com/f/georgefloyd">George Floyd Memorial Fund</a>
+  <a href="https://www.gofundme.com/f/georgefloyd">George Floyd Memorial Fund</a> <span>$</span>
   <br>
-  <a href="https://www.artsbusinesscollaborative.org/asp-products/the-okra-project-sponsored-project/">The Okra Project</a>
+  <a href="https://www.artsbusinesscollaborative.org/asp-products/the-okra-project-sponsored-project/">The Okra Project</a> <span>$</span>
   <br>
-  <a href="https://www.classy.org/give/77372/#!/donation/checkout">Girls Who Code</a>
+  <a href="https://www.classy.org/give/77372/#!/donation/checkout">Girls Who Code</a> <span>$</span>
 
   `
 
@@ -257,7 +269,7 @@ profile.addEventListener('click', () => {
 profileClick();
 
 function transition(){
-  const imgArr = ["https://assets.tvo.org/prod/s3fs-public/styles/full_width_1280/public/article-thumbnails/Black-Lives-Matter.jpg?EnUPuFwVloAYHIB.QK3q50EdkrQ9ovFU", "https://i.imgur.com/MI68j2w.jpg","https://api.time.com/wp-content/uploads/2019/03/march.jpeg?w=2000"]
+  const imgArr = ["https://assets.tvo.org/prod/s3fs-public/styles/full_width_1280/public/article-thumbnails/Black-Lives-Matter.jpg?EnUPuFwVloAYHIB.QK3q50EdkrQ9ovFU", "https://i.imgur.com/MI68j2w.jpg","https://api.time.com/wp-content/uploads/2019/03/march.jpeg?w=2000", "https://storiescdn.hornet.com/wp-content/uploads/2019/03/04133403/act-up.jpg", "https://public-media.si-cdn.com/filer/73/71/7371489a-5997-4c12-955c-852a71c05256/ed4f1k.jpg"]
   let body = document.querySelector('body')
   let bg1 = document.createElement('img')
   let button = document.querySelector('#clicker')
@@ -290,3 +302,29 @@ function transition(){
 transition()
 
 
+document.addEventListener('click', (e) =>{
+  let btn = document.querySelector('.event-btn')
+  let event = document.querySelector('.my-events')
+  if (e.target.className === "event-btn"){
+    let newDiv = document.createElement('div')
+    let formDiv = document.createElement('div')
+    formDiv.innerHTML = `
+    <form>
+      <label>Title</label><br>
+      <input type="text" id="#" name="#"><br>
+      <label>Location</label><br>
+      <input type="text" id="#" name="#">
+      <label>Zip</label><br>
+      <input type="number" id="#" name="#">
+      <label>Info</label><br>
+      <input type="text" id="#" name="#">
+      <input type="submit">
+  </form>
+    `
+    event.innerHTML = ""
+
+    newDiv.append(formDiv)
+    event.append(newDiv)
+
+  }
+})

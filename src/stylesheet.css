@@ -6,9 +6,8 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center top;
-    transition: all 0.9s ease;
-    
-   
+    transition: all 0.9s ease-out 0.2s;
+ 
   }
 
 
@@ -117,6 +116,8 @@ body {
   text-align: center;
   padding-left: 30%;
   text-shadow: 1px 2px white;
+
+ 
   }
   
   #two{
@@ -203,6 +204,7 @@ body {
     text-align: center;
     color: white;
     text-shadow: 1px 2px #7EBDC2;
+  
     
 
   }
@@ -210,8 +212,9 @@ body {
   h3{
     color: black;
   }
+  
   .front{
-    background-image: url('https://files.slack.com/files-pri/T02MD9XTF-F015T5ZTQ6M/image_from_ios.jpg');
+    background-image: url('./images/card1.jpg');
     background-size: 250%;
     background-repeat: no-repeat;
     background-position: center;
@@ -242,9 +245,12 @@ body {
    }
 
  .donation{
-    border: 1px solid black;
+
     width: 50;
- 
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid black;
    }
 
    button{
@@ -256,3 +262,33 @@ body {
     display:flex;
     flex-direction: column;
    }
+
+   .twitter-timeline{
+   padding-bottom: 50px !important;
+   }
+
+   .my-events{
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    align-items: center;
+    justify-content: center;
+   }
+
+   form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+ p.cardText{
+   text-shadow: 1px 1px white;
+ }
+
+ h4{
+   text-align: center;
+ }
+
+ p.sub{
+   text-align: center;
+ }
