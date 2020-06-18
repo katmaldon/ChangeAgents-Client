@@ -1,5 +1,4 @@
 
-
 function openNav() {
   document.getElementById("mySidebar").style.width = "300px";
   document.getElementById("main").style.marginLeft = "10px";
@@ -40,8 +39,9 @@ function titleColor(){
   const profileCards = document.querySelector('.profileCards')
   const events = document.querySelector('.events');
   const div = document.querySelector('.eventCards');
-
+ 
   function renderEvents(json){
+    
     json.forEach( e => {
     let eventDiv = document.createElement('div');
     eventDiv.innerHTML = `
@@ -57,10 +57,11 @@ function titleColor(){
       <div class="back">
         <h3>${e.info}</h3>
         <a href="${e.url}">${e.url}</a>
-
+        <button>add</button>
       </div>
     </div>
   </div>`;
+  
   div.append(eventDiv);
   
     });
@@ -68,17 +69,12 @@ function titleColor(){
   
 
   events.addEventListener('click', () =>{
-    let bg1 = document.querySelector('.bg1')
-    let bg2 = document.querySelector('.bg2')
-    let bg3 = document.querySelector('.bg3')
-      bg1.src = ""
-      bg2.src = ""
-      bg3.src = ""
     profileCards.innerHTML =""
     div.innerHTML = ""
    fetch('http://localhost:3000/events')
     .then(resp => resp.json())
     .then(json => renderEvents(json));
+    
 }
 );
 }
@@ -103,10 +99,9 @@ eventsClick();
 
   const volunteer = document.querySelector('.volunteer');
   const div = document.querySelector('.eventCards');
-  const profileCards = document.querySelector('.profileCards')
+  const profileCards = document.querySelector('.profileCards');
   
   function renderEvents(json){
-    // let eventTitle = document.createElement('h1');
     
     json.forEach( e => {
     let volunteerDiv = document.createElement('div')
@@ -114,16 +109,16 @@ eventsClick();
     <div class="container">
     <div class="card" id=${e.id} onclick="flip(event)">
       <div class="front">
+
         <h1 class="cardTitle">${e.title}</h1>
         <p> ${e.location}</p>
-        <p>${e.date}</p>
-        <p>${e.time}</p>
+
 
       </div>
       <div class="back">
         <h4>${e.info}</h4>
         <a href="${e.url}">${e.url}</a>
-
+      
       </div>
     </div>
   </div>`;
@@ -136,13 +131,10 @@ eventsClick();
   
 
   volunteer.addEventListener('click', () =>{
+  let body = document.querySelector('body')
+  body.style.cssText = `
+  background-image: none;`
     profileCards.innerHTML =""
-    let bg1 = document.querySelector('.bg1')
-    let bg2 = document.querySelector('.bg2')
-    let bg3 = document.querySelector('.bg3')
-      bg1.src = ""
-      bg2.src = ""
-      bg3.src = ""
     div.innerHTML = ""
     profileCards.innerHTML = ""
    fetch('http://localhost:3000/resources')
@@ -229,7 +221,7 @@ profile.addEventListener('click', () => {
 profileClick();
 
 function transition(){
-  const imgArr = ["https://assets.tvo.org/prod/s3fs-public/styles/full_width_1280/public/article-thumbnails/Black-Lives-Matter.jpg?EnUPuFwVloAYHIB.QK3q50EdkrQ9ovFU", "https://i.imgur.com/MI68j2w.jpg","https://api.time.com/wp-content/uploads/2019/03/march.jpeg?w=2000"]
+  const imgArr = ["https://assets.tvo.org/prod/s3fs-public/styles/full_width_1280/public/article-thumbnails/Black-Lives-Matter.jpg?EnUPuFwVloAYHIB.QK3q50EdkrQ9ovFU", "https://i.imgur.com/MI68j2w.jpg","https://api.time.com/wp-content/uploads/2019/03/march.jpeg?w=2000", "https://storiescdn.hornet.com/wp-content/uploads/2019/03/04133403/act-up.jpg", "https://public-media.si-cdn.com/filer/73/71/7371489a-5997-4c12-955c-852a71c05256/ed4f1k.jpg"]
   let body = document.querySelector('body')
   let bg1 = document.createElement('img')
   let button = document.querySelector('#clicker')
@@ -261,4 +253,10 @@ function transition(){
 
 transition()
 
+
+// function cardImg(){
+// let cardArr = ["./images/card1.jpg", "./images/card2.jpg", "./images/card3.jpg"]
+// const card = document.querySelector('.front')
+// card.style.cssText = `background-image: url('./images/card3.jpg')`
+// }
 
