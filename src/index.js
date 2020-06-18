@@ -33,7 +33,7 @@ function titleColor(){
  });
 }
 
-  
+
   titleColor();
 
   function eventsClick(){
@@ -57,23 +57,50 @@ function titleColor(){
       <div class="back">
         <h3>${e.info}</h3>
         <a href="${e.url}">${e.url}</a>
+        <br>
+        <button class="eventsBtn" type="submit">Add to my events</button>
 
       </div>
     </div>
   </div>`;
   div.append(eventDiv);
-  
+
     });
   }
-  
+
+  events.addEventListener('click', () => {
+    session_user_id = id //pull session id from card  ?
+    fav_event_id = event.target.parentNode.id
+    console.log(event.target.parentNode.id)
+    if(event.target.className === "eventsBtn") {
+
+        const options = {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+                "accept": "application/json"
+            },
+            body: JSON.stringify({
+                user_id: session_user_id
+                event_id: fav_event_id
+            })
+        }
+
+        fetch("http://localhost:3000/user_events", options)
+        .then(response => response.json())
+        .then(pic => renderPic(pic))
+    }
+
+  })
+
 
   events.addEventListener('click', () =>{
     let bg1 = document.querySelector('.bg1')
     let bg2 = document.querySelector('.bg2')
     let bg3 = document.querySelector('.bg3')
-      bg1.src = ""
-      bg2.src = ""
-      bg3.src = ""
+    //   bg1.src = ""
+    //   bg2.src = ""
+    //   bg3.src = ""
     profileCards.innerHTML =""
     div.innerHTML = ""
    fetch('http://localhost:3000/events')
@@ -104,10 +131,10 @@ eventsClick();
   const volunteer = document.querySelector('.volunteer');
   const div = document.querySelector('.eventCards');
   const profileCards = document.querySelector('.profileCards')
-  
+
   function renderEvents(json){
     // let eventTitle = document.createElement('h1');
-    
+
     json.forEach( e => {
     let volunteerDiv = document.createElement('div')
     volunteerDiv.innerHTML = `
@@ -130,10 +157,10 @@ eventsClick();
   // eventTitle.textContent = "Resources"
   // div.append(eventTitle)
   div.append(volunteerDiv);
-  
+
     });
   }
-  
+
 
   volunteer.addEventListener('click', () =>{
     profileCards.innerHTML =""
@@ -156,14 +183,14 @@ volunteerClick();
 
 //PROFILE LOGIC *********************
 function renderProfile(json){
-  
+
   let greeting = ["Making a difference from ","Taking a stand in ", "Doing your part in ", "Changing the world from ", "Using your voice from "];
   const eventCards = document.querySelector('.eventCards');
   const profileCards = document.querySelector('.profileCards');
   const donationDiv = document.createElement('div');
   const myEvents = document.createElement('div');
   donationDiv.className = "donation";
-  
+
   myEvents.className = "my-events";
   eventCards.innerHTML = ""
   //figure out how to style the event card div w a 0 height for other pages,
@@ -200,11 +227,11 @@ function renderDonations(){
   return `
   <button>−</button>
   <h1>Your Donations</h1>
-  <a href="https://www.gofundme.com/f/georgefloyd">George Floyd Memorial Fund</a> 
+  <a href="https://www.gofundme.com/f/georgefloyd">George Floyd Memorial Fund</a>
   <br>
-  <a href="https://www.artsbusinesscollaborative.org/asp-products/the-okra-project-sponsored-project/">The Okra Project</a> 
+  <a href="https://www.artsbusinesscollaborative.org/asp-products/the-okra-project-sponsored-project/">The Okra Project</a>
   <br>
-  <a href="https://www.classy.org/give/77372/#!/donation/checkout">Girls Who Code</a> 
+  <a href="https://www.classy.org/give/77372/#!/donation/checkout">Girls Who Code</a>
 
   `
 
@@ -214,7 +241,7 @@ function renderDonations(){
 
 function profileClick(){
 const profile = document.querySelector('.profile');
-profile.addEventListener('click', () => { 
+profile.addEventListener('click', () => {
   let body = document.querySelector('body')
   body.style.cssText = `
   background-image: none;`
@@ -241,11 +268,11 @@ function transition(){
     console.log("clicking")
       if (index < imgArr.length -1 ){
         e.preventDefault()
-      index++ 
+      index++
       body.style.cssText = `
       background-image: url('${imgArr[index]}');
       `
-      } 
+      }
       else {
         e.preventDefault()
         index = 0
