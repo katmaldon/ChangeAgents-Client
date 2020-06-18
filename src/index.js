@@ -269,7 +269,7 @@ profile.addEventListener('click', () => {
 profileClick();
 
 function transition(){
-  const imgArr = ["https://assets.tvo.org/prod/s3fs-public/styles/full_width_1280/public/article-thumbnails/Black-Lives-Matter.jpg?EnUPuFwVloAYHIB.QK3q50EdkrQ9ovFU", "https://i.imgur.com/MI68j2w.jpg","https://api.time.com/wp-content/uploads/2019/03/march.jpeg?w=2000", "https://storiescdn.hornet.com/wp-content/uploads/2019/03/04133403/act-up.jpg", "https://public-media.si-cdn.com/filer/73/71/7371489a-5997-4c12-955c-852a71c05256/ed4f1k.jpg"]
+  const imgArr = ["https://assets.tvo.org/prod/s3fs-public/styles/full_width_1280/public/article-thumbnails/Black-Lives-Matter.jpg?EnUPuFwVloAYHIB.QK3q50EdkrQ9ovFU", "https://i.imgur.com/MI68j2w.jpg","https://api.time.com/wp-content/uploads/2019/03/march.jpeg?w=2000", "https://storiescdn.hornet.com/wp-content/uploads/2019/03/04133403/act-up.jpg", "https://public-media.si-cdn.com/filer/73/71/7371489a-5997-4c12-955c-852a71c05256/ed4f1k.jpg", "https://cdn.aarp.net/content/dam/aarp/politics/events-and-history/2018/02/1140-civil-rights-movements-1963-march.imgcache.rev0592dbf1fe2616b4f127a4f315f14d10.jpg"]
   let body = document.querySelector('body')
   let bg1 = document.createElement('img')
   let button = document.querySelector('#clicker')
@@ -328,3 +328,22 @@ document.addEventListener('click', (e) =>{
 
   }
 })
+
+
+// USE YOUR VOICE LOGIC ********************
+
+function voiceClick(){
+let voice = document.querySelector(".voice")
+
+voice.addEventListener("click", () =>{
+console.log('cool!')
+
+
+
+})
+
+
+
+
+
+}
