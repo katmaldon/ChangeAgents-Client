@@ -250,8 +250,7 @@ body {
     display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
+    border: 1px solid black;
    }
 
    button{
@@ -281,3 +280,15 @@ body {
     flex-direction: column;
     align-items: center;
    }
+
+ p.cardText{
+   text-shadow: 1px 1px white;
+ }
+
+ h4{
+   text-align: center;
+ }
+
+ p.sub{
+   text-align: center;
+ }

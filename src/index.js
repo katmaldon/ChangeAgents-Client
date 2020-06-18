@@ -49,9 +49,9 @@ function titleColor(){
     <div class="card" id=${e.id} onclick="flip(event)">
       <div class="front">
         <h1 class="cardTitle">${e.title}</h1>
-        <p> ${e.location}</p>
-        <p>${e.date}</p>
-        <p>${e.time}</p>
+        <p class="cardText"> ${e.location}</p>
+        <p class="cardText">${e.date}</p>
+        <p class="cardText">${e.time}</p>
 
       </div>
       <div class="back">
@@ -111,7 +111,7 @@ eventsClick();
       <div class="front">
 
         <h1 class="cardTitle">${e.title}</h1>
-        <p> ${e.location}</p>
+        <p class="cardText"> ${e.location}</p>
 
 
       </div>
@@ -184,8 +184,24 @@ function renderEvents(json){
 
 return `
 <button>−</button>
-<p>Event1</p>
-<p>Event2</p>
+<div class="container">
+    <div class="card" id=# onclick="flip(event)">
+      <div class="front">
+
+        <h1 class="cardTitle">Justice For Breonna Taylor</h1>
+        <p class="cardText">Maria Hernandez Park</p>
+        <p class="cardText" >6pm</p>
+        <p class="cardText" >11237</p>
+
+      </div>
+      <div class="back">
+        <h4>A gathering to demand justice for Breonna. Rain or shine.</h4>
+        <p class="sub">Meeting at Maria Hernandez and marching to Bed Stuy Precinct.</p>
+        <a href="https://www.buzzfeednews.com/article/emaoconnor/breonna-taylor-protest-brooklyn-police-brutality">More Info</a>
+      
+      </div>
+    </div>
+  </div>
 <button type="button" class="event-btn">Add Event</button>
 `
 
@@ -196,11 +212,11 @@ function renderDonations(){
   return `
   <button>−</button>
   <h1>Your Donations</h1>
-  <a href="https://www.gofundme.com/f/georgefloyd">George Floyd Memorial Fund</a> 
+  <a href="https://www.gofundme.com/f/georgefloyd">George Floyd Memorial Fund</a> <span>$</span>
   <br>
-  <a href="https://www.artsbusinesscollaborative.org/asp-products/the-okra-project-sponsored-project/">The Okra Project</a> 
+  <a href="https://www.artsbusinesscollaborative.org/asp-products/the-okra-project-sponsored-project/">The Okra Project</a> <span>$</span>
   <br>
-  <a href="https://www.classy.org/give/77372/#!/donation/checkout">Girls Who Code</a> 
+  <a href="https://www.classy.org/give/77372/#!/donation/checkout">Girls Who Code</a> <span>$</span>
 
   `
 
