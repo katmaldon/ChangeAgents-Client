@@ -4,8 +4,10 @@ body {
     height:100%;
     background-image: url("http://southboundproject.org/wp-content/uploads/sites/2/nggallery/sheila-pree-bright/1-Exhibition_ReclaimMLKDay-Black-Lives-Matter-Disrupts-M.L.K.-Jr.-Day-Parades-Across-the-Country.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
+    /* background-size: 100%; */
     background-position: center top;
+    /* background-position: center top; */
     transition: all 0.9s ease-out 0.2s;
 
   }
@@ -291,6 +293,7 @@ body {
 
  p.cardText{
    text-shadow: 1px 1px white;
+   background-color: rgb(245, 245, 245, .8);
  }
 
  h4{
@@ -303,10 +306,12 @@ body {
 
 .email-div{
   display: flex;
+  font-size: 10px;
   text-align: center;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  align-content: center;
 }
 
  a.choice:hover{

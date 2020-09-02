@@ -1,8 +1,8 @@
 
 function openNav() {
-    document.getElementById("mySidebar").style.width = "300px";
+    document.getElementById("mySidebar").style.width = "350px";
     document.getElementById("main").style.marginLeft = "10px";
-    document.querySelector("body").style.marginLeft = "300px";
+    document.querySelector("body").style.marginLeft = "360px";
 }
 
 function closeNav() {
@@ -271,7 +271,7 @@ function profileClick() {
 profileClick();
 
 function transition() {
-    const imgArr = ["https://assets.tvo.org/prod/s3fs-public/styles/full_width_1280/public/article-thumbnails/Black-Lives-Matter.jpg?EnUPuFwVloAYHIB.QK3q50EdkrQ9ovFU", "https://i.imgur.com/MI68j2w.jpg", "https://api.time.com/wp-content/uploads/2019/03/march.jpeg?w=2000", "https://storiescdn.hornet.com/wp-content/uploads/2019/03/04133403/act-up.jpg", "https://public-media.si-cdn.com/filer/73/71/7371489a-5997-4c12-955c-852a71c05256/ed4f1k.jpg", "https://cdn.aarp.net/content/dam/aarp/politics/events-and-history/2018/02/1140-civil-rights-movements-1963-march.imgcache.rev0592dbf1fe2616b4f127a4f315f14d10.jpg"]
+    const imgArr = ["https://assets.tvo.org/prod/s3fs-public/styles/full_width_1280/public/article-thumbnails/Black-Lives-Matter.jpg?EnUPuFwVloAYHIB.QK3q50EdkrQ9ovFU", "https://i.imgur.com/MI68j2w.jpg", "https://api.time.com/wp-content/uploads/2019/03/march.jpeg?w=2000", "https://public-media.si-cdn.com/filer/73/71/7371489a-5997-4c12-955c-852a71c05256/ed4f1k.jpg", "https://cdn.aarp.net/content/dam/aarp/politics/events-and-history/2018/02/1140-civil-rights-movements-1963-march.imgcache.rev0592dbf1fe2616b4f127a4f315f14d10.jpg"]
     let body = document.querySelector('body')
     let bg1 = document.createElement('img')
     let button = document.querySelector('#clicker')
@@ -286,6 +286,7 @@ function transition() {
             index++
             body.style.cssText = `
       background-image: url('${imgArr[index]}');
+      background-position: cover;
       `
         }
         else {
@@ -293,6 +294,8 @@ function transition() {
             index = 0
             body.style.cssText = `
         background-image: url('${imgArr[index]}');
+        background-position: cover;
+
         `
         }
     })
@@ -389,11 +392,13 @@ document.addEventListener('click', () => {
       profileCards.innerHTML = ""
       div.style.cssText = `display:flex;`
       div.innerHTML = ""
+      div.style.cssText=`display:flex; justify-content:center; grid-gap:none;grid-template-columns: none;`
       body.style.cssText = `background-image: none; background-color: #EBEBEB;`
       let emailDiv = document.createElement('div')
       emailDiv.className = "email-div"
 
       emailDiv.innerHTML = `
+      <h1 class="template">Can't make it to an event? No problem. Use our email templates to take action in your community and beyond.</h1>
       <h1 class="template">Choose Template to Send</h1>
       <a class="choice" href="#">Justice for Breonna Taylor</a>
       <br>
