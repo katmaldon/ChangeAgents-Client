@@ -239,12 +239,13 @@ function renderDonations() {
     return `
   <button>−</button>
   <h1>Your Donations</h1>
-  <a class="dnte" href="https://www.gofundme.com/f/georgefloyd">George Floyd Memorial Fund</a> <span>$</span>
+  <a class="dnte" href="https://www.gofundme.com/f/georgefloyd">George Floyd Memorial Fund</a> <span>$50</span>
   <br>
-  <a class="dnte" href="https://www.artsbusinesscollaborative.org/asp-products/the-okra-project-sponsored-project/">The Okra Project</a> <span>$</span>
+  <a class="dnte" href="https://www.artsbusinesscollaborative.org/asp-products/the-okra-project-sponsored-project/">The Okra Project</a> <span>$100</span>
   <br>
-  <a class="dnte" href="https://www.classy.org/give/77372/#!/donation/checkout">Girls Who Code</a> <span>$</span>
-
+  <a class="dnte" href="https://www.classy.org/give/77372/#!/donation/checkout">Girls Who Code</a> <span>$60</span>
+  <br>
+<h2>Current Pledge: $110</h2>
   `
 
 }
