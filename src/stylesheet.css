@@ -245,7 +245,6 @@ body {
    }
 
  .donation{
-
     width: 50%;
     display:flex;
     padding: 20px;
@@ -254,6 +253,7 @@ body {
     border: 3px solid #BB4430;
     border-radius: 15px;
     background-color: #F5F5F5;
+    margin-top: 5%;
    }
 
    button{
@@ -338,8 +338,12 @@ text-decoration: none;
 
  .name-greet{
   font-family: 'Yeseva One', cursive;
+  margin: 2%;
  }
 
- .rand-greet{
+ .rand-greet1{
   font-family: 'Yeseva One', cursive;
+  font-size: 3vh;
+  display: inline;
+  margin: 0;
  }

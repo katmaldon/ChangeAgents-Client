@@ -190,7 +190,7 @@ function renderProfile(json){
   // or remove without issues.
   profileCards.innerHTML = `
   <h1 class="name-greet">Hey, ${json.name}!</h1>
-  <h3 class="rand-greet">${greeting[Math.round(Math.random() * 3)]} ${json.location}, New York</h3>
+  <h3 class="rand-greet1">${greeting[Math.round(Math.random() * 3)]} ${json.location}, New York</h3>
  `
     //renderEventsDiv
     //renderDonationDiv
