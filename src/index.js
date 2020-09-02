@@ -160,7 +160,8 @@ function volunteerClick() {
     volunteer.addEventListener('click', () => {
         let body = document.querySelector('body')
         body.style.cssText = `
-  background-image: none;`
+  background-image: none;
+  background-color: #EBEBEB`
         profileCards.innerHTML = ""
         div.innerHTML = ""
         profileCards.innerHTML = ""
@@ -257,7 +258,8 @@ function profileClick() {
     profile.addEventListener('click', () => {
         let body = document.querySelector('body')
         body.style.cssText = `
-  background-image: none;`
+  background-image: none;
+  background-color: #EBEBEB;`
         fetch('http://localhost:3000/users/1')
             .then(resp => resp.json())
             .then(json => renderProfile(json))
@@ -387,7 +389,7 @@ document.addEventListener('click', () => {
       profileCards.innerHTML = ""
       div.style.cssText = `display:flex;`
       div.innerHTML = ""
-      body.style.cssText = `background-image: none;`
+      body.style.cssText = `background-image: none; background-color: #EBEBEB;`
       let emailDiv = document.createElement('div')
       emailDiv.className = "email-div"
 
